@@ -1,0 +1,22 @@
+<template>
+    <div >
+        <lightning-card class=" slds-truncate" variant="Narrow"  title={number} icon-name="standard:opportunity_contact_role">
+            <lightning-button  value="AddContactRole" label="Add Contact Role" onclick={handleClick} slot="actions" ></lightning-button>
+        </lightning-card>
+       </div>
+       <template if:true={data}>
+       <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}
+                onrowaction={handleRowAction}
+                hide-checkbox-column>
+          </lightning-datatable>
+    </div>   
+    <div class="slds-box center" style="border-top-left-radius: inherit !important; border-top-right-radius: inherit !important; background: white;"  slot="footer">
+        <lightning-button style="height: -webkit-fill-available;" class="slds-align_absolute-center slds-m-top_xx-small" variant="base" label="View All" onclick={navigateRelatedListView}>
+       </lightning-button>
+    </div> 
+</template>
+</template>
